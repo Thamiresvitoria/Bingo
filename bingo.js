@@ -1,12 +1,17 @@
 // Objetivo: desenvolver um sistema de Bingo executado pelo terminal em JavaScript, aplicando os conteudos da UC2.
 
-// Bloco 1 - Variaveis
-// Vetor que armazenara todos os numeros ja sorteados.
+//------------------------------
+// BLOCO 1 - VARIAVEIS
+//------------------------------
+
+
+//A Vriavel/Vetor que armazena todos os numeros ja sorteados.
 let numerosSorteados = [];
-// Vetor que armazenara todos os numeros disponiveis para sorteio.
+
+//A Variavel/Vetor que vai armazena os numeros disponiveis para sorteio.
 let numerosDisponiveis = [];
 
-// criar uma interacao que adiciona no array os numeros criados
+//Criação de variavel para criar os numeros que vão ser sorteados, todos eles vão ser adicionados em uma array.
 for (let i = 1; i <= 75; i++) {
   numerosDisponiveis.push(i);
 }
@@ -16,8 +21,15 @@ let sistema = {
   ultimoNumero: null
 };
 
-// Preparando o sistema para iniciar um novo Bingo
-// Bloco 2 - Funcoes:
+
+
+
+//------------------------------
+// PREPARANDO O SISTEMA PARA INICIAR UM NOVO BINGO
+// BLOCO 2 - FUNCOES:
+//------------------------------
+
+
 
 function sortearNumero() {
   if (numerosDisponiveis.length === 0) {
@@ -25,28 +37,28 @@ function sortearNumero() {
     return;
   }
 
-  // cria a aleatorizacao dos numeros a partir dos indices que serao criados aleatoriamente.
+  // Criação dos numeros aleatorios (Math.random), armazenando os mesmos aleatoriamente 
   let indice = Math.floor(Math.random() * numerosDisponiveis.length);
   let numero = numerosDisponiveis[indice];
 
-  // remove o numero sorteado da lista
+  // Remove o numero sorteado da lista
   numerosDisponiveis.splice(indice, 1);
 
-  // guardando no historico
+  // Guardando no historico
   numerosSorteados.push(numero);
 
-  sistema.ultimoNumero = numero;
+  sistema.ultimoNumero = numero[-1];
 
   console.log("Numero sorteado: " + numero);
 }
 
 function inicializarVetores() {
 
-  // Limpa os vetores caso ja possuam informacoes.
+  // Limpa os vetores/variaveis caso ja possuam informacoes.
   numerosSorteados = [];
   numerosDisponiveis = [];
 
-  // Adiciona ao vetor todos os numeros de 1 ate 75.
+  // Adiciona ao vetor/variavel todos os numeros de 1 ate 75.
   for (let i = 1; i <= 75; i++) {
     numerosDisponiveis.push(i);
   }
@@ -71,19 +83,25 @@ function reiniciarBingo() {
   console.log("======================================\n");
 }
 
-// Bloco 3 -  Historico + pesquisa + ordenacao
+
+
+//------------------------------
+// BLOCO 3 -  HISTORICO + PESQUISA + ORDENACAO
+//------------------------------
+
+
 
 // Funcao que exibe o historico de numeros sorteados
 function mostrarHistorico() {
 
-  console.log("-".repeat(30));
+  console.log("-".repeat(48));
 
   console.log("Historico de numeros sorteados:");
   for (let i = 0; i < numerosSorteados.length; i++) {
     console.log(`Numero sorteado: ${numerosSorteados[i]}`);
   }
 
-  console.log("-".repeat(30));
+  console.log("-".repeat(48));
 }
 
 // Funcao que ordena os numeros do menor para o maior
@@ -92,7 +110,7 @@ function mostrarNumerosOrdenados() {
   // Se (a - b) for negativo, o JavaScript entende que "a" deve ficar antes de "b" no array.
 
   console.log("Numeros ordenados:", ordenados);
-  console.log("-".repeat(30));
+  console.log("-".repeat(48));
 }
 
 // Funcao que verifica se um numero esta no array de sorteados
@@ -105,21 +123,52 @@ function pesquisarNumero(numero) {
   }
 }
 
-// Bloco 4 - Criação do menu
+// Funcao que vai registrar total de numeros disponiveis, Total Sorteados e ultimo numero
+
+function mostrarRegistro() {
+
+  let registro = {
+    totalDisponivel: numerosDisponiveis.length,
+    totalSorteado: numerosSorteados.length,
+
+    ultimoNumero:
+      numerosSorteados.length > 0
+        ? numerosSorteados[numerosSorteados.length - 1]
+        : "Nao existe"
+  };
+
+  console.log("-".repeat(10));
+  console.log(registro);
+  console.log("-".repeat(10));
+
+}
+
+
+
+//------------------------------
+// BLOCO 4 - CRIAÇÃO DO MENU
+//------------------------------
+
+
 
 const readline = require("readline-sync");
 
 let opcao = 0;
 
-while (opcao !== 6) {
-  opcao = Number(readline.question(`Escolha uma opcao:
-1 - Sortear numero
-2 - Mostrar numeros em ordem crescente
-3 - Reiniciar Bingo
-4 - Historico de numeros sorteados
-5 - Pesquisar numero sorteado
-6 - Sair
-: `));
+while (opcao !== 7) {
+  opcao = Number(readline.question(`
++----------------------------------------------+
+|                 BINGO                         |
++----------------------------------------------+
+| 1 | Sortear numero                           |
+| 2 | Mostrar numeros em ordem crescente       |
+| 3 | Reiniciar Bingo                          |
+| 4 | Historico de numeros sorteados           |
+| 5 | Pesquisar numero sorteado                |
+| 6 | Registro do Bingo                        |
+| 7 | Sair                                     |
++----------------------------------------------+
+Digite a opcao: `));
 
   if (opcao === 1) {
     sortearNumero();
@@ -133,6 +182,8 @@ while (opcao !== 6) {
     let numero = Number(readline.question("Digite o numero a ser pesquisado: "));
     pesquisarNumero(numero);
   } else if (opcao === 6) {
+    mostrarRegistro()
+  }else if (opcao === 7) {
     console.log("Saindo do sistema...");
   } else {
     console.log("Opcao invalida!");
