@@ -1,5 +1,17 @@
 // Objetivo: desenvolver um sistema de Bingo executado pelo terminal em JavaScript, aplicando os conteudos da UC2.
 
+/*
+
+**EQUIPE 5:**
+
+1. DANILO DE FREITAS DA SILVA
+2. EDINALDO DA SILVA RAMOS
+3. EVELLYN AMELIA RODRIGUES GOMES
+4. JOAO VITOR ATILA GOMES DOS SANTOS
+5. THAMIRES VITÓRIA MUNIZ DA SILVA
+
+*/
+
 //------------------------------
 // BLOCO 1 - VARIAVEIS
 //------------------------------
