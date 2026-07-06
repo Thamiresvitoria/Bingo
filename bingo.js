@@ -1,6 +1,6 @@
 // Objetivo: desenvolver um sistema de Bingo executado pelo terminal em JavaScript, aplicando os conteudos da UC2.
 
-// Variaveis
+// Bloco 1 - Variaveis
 // Vetor que armazenara todos os numeros ja sorteados.
 let numerosSorteados = [];
 // Vetor que armazenara todos os numeros disponiveis para sorteio.
@@ -17,7 +17,7 @@ let sistema = {
 };
 
 // Preparando o sistema para iniciar um novo Bingo
-// Funcoes:
+// Bloco 2 - Funcoes:
 
 function sortearNumero() {
   if (numerosDisponiveis.length === 0) {
@@ -71,7 +71,7 @@ function reiniciarBingo() {
   console.log("======================================\n");
 }
 
-// Historico + pesquisa + ordenacao
+// Bloco 3 -  Historico + pesquisa + ordenacao
 
 // Funcao que exibe o historico de numeros sorteados
 function mostrarHistorico() {
@@ -105,7 +105,7 @@ function pesquisarNumero(numero) {
   }
 }
 
-// Criacao do menu
+// Bloco 4 - Criação do menu
 
 const readline = require("readline-sync");
 
