@@ -29,7 +29,7 @@ Este projeto foi desenvolvido como atividade da UC2, com o objetivo de criar um 
 2. Acesse a pasta do projeto:
 
    ```bash
-   cd NOME_DO_PROJETO
+   cd Bingo
    ```
 
 3. Instale a dependência:
@@ -41,7 +41,7 @@ Este projeto foi desenvolvido como atividade da UC2, com o objetivo de criar um 
 4. Execute o projeto:
 
    ```bash
-   node nomeDoArquivo.js
+   node bingo.js
    ```
 
 ## 📋 Menu do sistema
