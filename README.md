@@ -68,11 +68,14 @@ Este projeto foi desenvolvido como atividade da UC2, com o objetivo de criar um 
 
 ## 👥 Integrantes
 
-* Evellyn Amélia 
-* Thamires Vitoria
-* Joao Vitor Atila
-* Danilo Freitas
-* Edinaldo
+**EQUIPE 5:**
+
+1. DANILO DE FREITAS DA SILVA
+2. EDINALDO DA SILVA RAMOS
+3. EVELLYN AMELIA RODRIGUES GOMES
+4. JOAO VITOR ATILA GOMES DOS SANTOS
+5. THAMIRES VITÓRIA MUNIZ DA SILVA
+
 
 ## 📄 Licença
 
