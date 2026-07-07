@@ -52,7 +52,8 @@ Este projeto foi desenvolvido como atividade da UC2, com o objetivo de criar um 
 3 - Reiniciar Bingo
 4 - Histórico de números sorteados
 5 - Pesquisar número sorteado
-6 - Sair
+6 - Registro do bingo
+7 - Sair
 ```
 
 ## 📚 Conceitos aplicados
